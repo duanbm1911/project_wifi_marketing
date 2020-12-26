@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        {% load static %}
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-------->
+        <link rel="icon" type="image/png" href="/media/logo.png"/>
+        <!-------->
+        <title>WIFI FREE</title>
+        <!-------->
+        <link rel="stylesheet" href="{% static 'main/css/bootstrap-theme.css' %}">
+        <link rel="stylesheet" href="{% static 'main/css/bootstrap.css' %}">
+        <link rel="stylesheet" href="{% static 'main/css/bootstrap.min.css' %}">
+        <!-------->
+        <script src="{% static 'main/js/jquery.js' %}"></script>
+        <script src="{% static 'main/js/bootstrap.js' %}"></script>
+        <script src="{% static 'main/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'main/js/portal.js' %}"></script>             
+
+    </head>
+    <body>
+        <div class="col-xs-12 col-sm-9 col-md-6 col-lg-3 col-md-offset-4">
+            <div class="form-group"><center><h2>WIFI FREE</h2></center></div>
+            <div role="tabpanel">
+                <!-- Nav tabs -->
+                <div class="form-group">
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active">
+                            <a href="#login" aria-controls="login" role="tab" data-toggle="tab">Đăng nhập</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#register" aria-controls="register" role="tab" data-toggle="tab">Đăng ký</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="login">
+                        <form action="" method="post" id="login-form">
+                            {% csrf_token %}  
+                            <div class="form-group"><input type="text" id="login-username" class="form-control" placeholder="Tên truy nhập"></div>        
+                            <div class="form-group"><input type="password" id="login-password" class="form-control" placeholder="Mật khẩu"></div>
+                            <div class="form-group"><button type="button" class="btn btn-large btn-block btn-danger" id="login-btn">Đăng nhập</button></div>
+                            <div class="form-group" id="login-arlert"></div>
+                            <div id="hidden">
+                                <input type="text" id="hidden-sta" value="{{sta}}" hidden>
+                                <input type="text" id="hidden-ap" value="{{ap}}" hidden>
+                                <input type="text" id="hidden-ssid" value="{{ssid}}" hidden>
+                            </div>
+                        </form>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="register">
+                        <form action="" method="post" id="register-form">
+                            {% csrf_token %}
+                            <div class="form-group"><input type="text" class="form-control" id="register-username" placeholder="Tên truy nhập"></div>
+                            <div class="form-group"><input type="text" class="form-control" id="register-phone-number" placeholder="Số điện thoại"></div>
+                            <div class="form-group"><input type="password" class="form-control" id="register-password" placeholder="Mật khẩu lớn hơn 6 ký tự"></div>
+                            <div class="form-group"><input type="password" class="form-control" id="register-repeat-password" placeholder="Nhập lại mật khẩu"></div>
+                            <div class="form-group"><button type="button" class="btn btn-large btn-block btn-warning" id="register-btn">Đăng ký</button></div>
+                            <div class="form-group" id="register-arlert"></div>
+                        </form>                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
